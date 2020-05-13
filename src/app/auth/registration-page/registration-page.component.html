@@ -1,0 +1,97 @@
+<div class="wrapper">
+  <div class="container">
+  <div class="login">
+    <div class="login-wrapper">
+      <div class="sign-in">
+        <p>Sign in</p>
+      </div>
+      <div class="logo-login">
+        <div class="logo-img">
+          <a [routerLink]="['/']"><img src="../assets/img/logo-login.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+    <div class="form-wrapper">
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div
+          class="form-control"
+          [ngClass]="{invalid:f.email.touched && f.email.invalid}"
+        >
+          <input
+            type="text"
+            placeholder="email"
+            formControlName="email"
+          >
+          <div
+            *ngIf="f.email.touched && f.email.invalid"
+            class="validation">
+            <small *ngIf="f.email.errors.required">email is not empty</small>
+            <small *ngIf="f.email.errors.email">please, enter correct email</small>
+            <small *ngIf="f.email.errors.forbiddenEmail">email exists</small>
+          </div>
+        </div>
+
+        <div
+          class="form-control"
+          [ngClass]="{invalid:form.get('password').touched && form.get('password').invalid}"
+        >
+          <input
+            [type]="fieldTextType ? 'text' : 'password'"
+            placeholder="password min 6 symbols"
+            formControlName="password"
+          >
+          <div
+            *ngIf="form.get('password').touched && form.get('password').invalid"
+            class="validation">
+            <small *ngIf="form.get('password').errors.required">password is not empty</small>
+            <small *ngIf="form.get('password').errors.minlength">password must be at least 6 symbols</small>
+          </div>
+        </div>
+        <div
+          class="form-control"
+          [ngClass]="{invalid:form.get('confirmPassword').touched && form.get('confirmPassword').invalid}"
+        >
+          <input
+            [type]="fieldTextType ? 'text' : 'password'"
+            placeholder="confirm password"
+            formControlName="confirmPassword"
+          >
+          <div
+            *ngIf="form.get('confirmPassword').touched && form.get('confirmPassword').invalid"
+            class="validation">
+            <small *ngIf="form.get('confirmPassword').errors.required">password is not empty</small>
+            <small *ngIf="form.get('confirmPassword').errors.minlength">password must be at least 6 symbols</small>
+            <small *ngIf="f.confirmPassword.errors.confirmedValidator">Password and Confirm Password must be match</small>
+          </div>
+        </div>
+
+        <button
+          [disabled]="form.invalid"
+          class="btn" type="submit">Registration</button>
+      </form>
+
+      <div class="icon-text-input">
+        <img src="../assets/img/logo-input-name.png" alt="">
+      </div>
+      <div
+        class="icon-password-input"
+        [ngClass]="fieldTextType ? 'text' : 'password'"
+      >
+        <a href="#"(click)="toggleFieldTextType($event)"><img src="../assets/img/logo-passwordt-name.png" alt=""></a>
+      </div>
+      <div
+        class="icon-password-confirm"
+        [ngClass]="fieldTextType ? 'text' : 'password'"
+      >
+        <a href="#"(click)="toggleFieldTextType($event)"><img src="../assets/img/logo-passwordt-name.png" alt=""></a>
+      </div>
+    </div>
+    <!--  form-wrapper        -->
+
+  </div>
+  <!--login-->
+</div>
+</div>
+
+

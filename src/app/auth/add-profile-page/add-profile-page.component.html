@@ -1,0 +1,177 @@
+<div class="wrapper">
+  <div class="container">
+  <div class="login">
+    <div class="login-wrapper">
+      <div class="sign-in">
+        <p>Add Profile</p>
+      </div>
+      <div class="logo-login">
+        <div class="logo-img">
+          <a [routerLink]="['/auth', 'dashboard']"><img src="../assets/img/logo-login.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+    <div class="form-wrapper">
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div
+          class="form-control"
+          [ngClass]="{invalid:form.get('name').touched && form.get('name').invalid}"
+        >
+          <input
+            type="text"
+            placeholder="name"
+            formControlName="name"
+          >
+          <div
+            *ngIf="form.get('name').touched && form.get('name').invalid"
+            class="validation">
+            <small *ngIf="form.get('name').errors.required">name is not empty</small>
+          </div>
+        </div>
+
+        <div
+          class="form-control"
+          [ngClass]="{invalid:form.get('work').touched && form.get('work').invalid}"
+        >
+          <input
+            type="text"
+            placeholder="work"
+            formControlName="work"
+          >
+          <div
+            *ngIf="form.get('work').touched && form.get('work').invalid"
+            class="validation">
+            <small *ngIf="form.get('work').errors.required">work is not empty</small>
+          </div>
+        </div>
+        <div
+          class="form-control"
+          [ngClass]="{invalid:form.get('address').touched && form.get('address').invalid}"
+        >
+          <input
+            type="text"
+            placeholder="address"
+            formControlName="address"
+          >
+          <div
+            *ngIf="form.get('address').touched && form.get('address').invalid"
+            class="validation">
+            <small *ngIf="form.get('address').errors.required">address is not empty</small>
+          </div>
+        </div>
+        <div
+          class="form-control"
+          [ngClass]="{invalid:form.get('phone').touched && form.get('phone').invalid}"
+        >
+          <input
+            type="text"
+            placeholder="phone example: +375295127575"
+            formControlName="phone"
+          >
+          <div
+            *ngIf="form.get('phone').touched && form.get('phone').invalid"
+            class="validation">
+            <small *ngIf="form.get('phone').errors.required">phone is not empty</small>
+            <small *ngIf="form.get('phone').errors.pattern">phone is not valid</small>
+          </div>
+        </div>
+        <div
+          class="form-control"
+          [ngClass]="{invalid:form.get('email').touched && form.get('email').invalid}"
+        >
+          <input
+            type="text"
+            placeholder="email"
+            formControlName="email"
+          >
+          <div
+            *ngIf="form.get('email').touched && form.get('email').invalid"
+            class="validation">
+            <small *ngIf="form.get('email').errors.required">email is not empty</small>
+            <small *ngIf="form.get('email').errors.email">please, enter correct email, example: ex@mail.ru</small>
+
+          </div>
+        </div>
+        <div
+          class="form-control"
+          [ngClass]="{invalid:form.get('website').touched && form.get('website').invalid}"
+        >
+          <input
+            type="text"
+            placeholder="website or link social"
+            formControlName="website"
+          >
+          <div
+            *ngIf="form.get('website').touched && form.get('website').invalid"
+            class="validation">
+            <small *ngIf="form.get('website').errors.required">website or link social is not empty</small>
+            <small *ngIf="form.get('website').errors.pattern">website or link social is not valid</small>
+
+          </div>
+        </div>
+        <div
+          class="form-control"
+          [ngClass]="{invalid:form.get('url').touched && form.get('url').invalid}"
+        >
+          <input
+            type="text"
+            placeholder="url photo"
+            formControlName="url"
+          >
+          <div
+            *ngIf="form.get('url').touched && form.get('url').invalid"
+            class="validation">
+            <small *ngIf="form.get('url').errors.required">url is not empty</small>
+            <small *ngIf="form.get('url').errors.pattern">url is not valid</small>
+           </div>
+        </div>
+        <div
+          class="form-control"
+          [ngClass]="{invalid:form.get('birthday').touched && form.get('birthday').invalid}"
+        >
+          <input
+            type="text"
+            placeholder="birthday format dd/mm/yyyy"
+            formControlName="birthday"
+          >
+          <div
+            *ngIf="form.get('birthday').touched && form.get('birthday').invalid"
+            class="validation">
+            <small *ngIf="form.get('birthday').errors.required">birthday is not empty</small>
+            <small *ngIf="form.get('birthday').errors.pattern">birthday is not valid pattern</small>
+
+          </div>
+        </div>
+        <div
+          class="form-control"
+          [ngClass]="{invalid:form.get('age').touched && form.get('age').invalid}"
+        >
+          <input
+            type="text"
+            placeholder="age"
+            formControlName="age"
+          >
+          <div
+            *ngIf="form.get('age').touched && form.get('age').invalid"
+            class="validation">
+            <small *ngIf="form.get('age').errors.required">age is not empty</small>
+            <small *ngIf="form.get('age').errors.pattern">age is not valid</small>
+
+          </div>
+        </div>
+
+        <button
+          [disabled]="form.invalid"
+          class="btn" type="submit">Add</button>
+      </form>
+
+
+    </div>
+    <!--  form-wrapper        -->
+
+    <!-- /.create-forgot -->
+  </div>
+  <!--login-->
+</div>
+</div>

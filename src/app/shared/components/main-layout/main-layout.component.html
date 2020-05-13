@@ -1,0 +1,21 @@
+<header class="header">
+  <div class="container d-flex align-items-center">
+    <div class="header-logo">
+      <a [routerLink]="['/']" class="logo">
+        <a href="#"><img src="../assets/img/logo-login.png" alt=""></a>
+      </a>
+    </div>
+
+
+    <!-- /.main-header-nav -->
+    <nav class="info-header-nav">
+      <input type="text" placeholder="search name" [(ngModel)]="searchStr">
+      <a [routerLink]="['/auth', 'login']">Sign in</a>
+      <a [routerLink]="['/auth', 'registration']">Registration</a>
+    </nav>
+    <!-- /.info-header-nav -->
+  </div>
+</header>
+
+<app-main-card [searchStr] = searchStr ></app-main-card>
+

@@ -1,0 +1,78 @@
+<div class="wrapper">
+   <div class="container">
+  <div class="login">
+    <div class="login-wrapper">
+      <div class="sign-in">
+        <p>Sign in</p>
+      </div>
+      <div class="logo-login">
+        <div class="logo-img">
+          <a [routerLink]="['/']"><img src="../assets/img/logo-login.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+    <div class="form-wrapper">
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div
+          class="form-control"
+          [ngClass]="{invalid:form.get('email').touched && form.get('email').invalid}"
+        >
+              <input
+                type="text"
+                placeholder="email"
+                formControlName="email"
+              >
+              <div
+                *ngIf="form.get('email').touched && form.get('email').invalid"
+                class="validation">
+                <small *ngIf="form.get('email').errors.required">email is not empty</small>
+                <small *ngIf="form.get('email').errors.email">please, enter correct email, example: ex@mail.ru</small>
+                <small *ngIf="form.get('email').errors.forbiddenEmail">such an account does not exist</small>
+              </div>
+        </div>
+
+        <div
+          class="form-control"
+          [ngClass]="{invalid:form.get('password').touched && form.get('password').invalid}"
+        >
+            <input
+              [type]="fieldTextType ? 'text' : 'password'"
+              placeholder="password min 6 symbols"
+              formControlName="password"
+            >
+            <div
+              *ngIf="form.get('password').touched && form.get('password').invalid"
+               class="validation">
+              <small *ngIf="form.get('password').errors.required">password is not empty</small>
+              <small *ngIf="form.get('password').errors.minlength">password must be at least 6 symbols</small>
+              <small *ngIf="form.get('password').errors.forbiddenPassword">incorrect password</small>
+            </div>
+            </div>
+            <button
+              [disabled]="form.invalid"
+              class="btn"
+              type="submit">Sign in</button>
+      </form>
+
+
+      <div class="icon-text-input">
+        <img src="../assets/img/logo-input-name.png" alt="">
+      </div>
+      <div
+        class="icon-password-input"
+        [ngClass]="fieldTextType ? 'text' : 'password'"
+      >
+        <a href="#"(click)="toggleFieldTextType($event)"><img src="../assets/img/logo-passwordt-name.png" alt=""></a>
+      </div>
+    </div>
+    <!--  form-wrapper        -->
+    <div class="create-forgot">
+      <a href="#"><p class="forgot-account-text">Forgot password?</p></a>
+      <a [routerLink]="['/auth/registration']"><p class="create-account-text">Create an account</p></a>
+    </div>
+    <!-- /.create-forgot -->
+  </div>
+  <!--login-->
+</div>
+</div>

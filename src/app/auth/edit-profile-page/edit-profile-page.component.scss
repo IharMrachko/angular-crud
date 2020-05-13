@@ -1,0 +1,73 @@
+input {
+  border: none;
+  width: 557px;
+  height: 82px;
+  margin-left: 24px;
+  margin-top: 25px;
+  padding-left: 22px;
+  background-color: #18191e;
+  font-size: 24px;
+}
+
+.wrapper {
+  background: linear-gradient(to bottom,#686868 90%, #747474, #7a7a7a);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+
+}
+
+.login {
+  box-shadow: 5px 5px 5px 4px rgba(0, 0, 0, 0.2);
+  width: 750px;
+  background-color: black;
+
+}
+.login-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.sign-in p {
+  color: #4b4b4c;
+  font-size: 48px;
+  margin-top: 80px;
+}
+
+.logo-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #df4a32;
+  margin-top: 61px;
+  width: 92px;
+  height: 92px;
+}
+
+.form-wrapper {
+  padding-left: 35px;
+  padding-bottom: 30px;
+  margin-left: 30px;
+}
+
+.btn {
+  border: none;
+  width: 557px;
+  height: 82px;
+  margin-left: 24px;
+  margin-top: 25px;
+  background-color: #d29d41;
+  text-transform: uppercase;
+  font-size: 24px;
+
+}
+
+.validation {
+  position: absolute;
+  color: #df4a32;
+  left: 390px;
+}
+
+

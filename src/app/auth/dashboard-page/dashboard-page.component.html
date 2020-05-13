@@ -1,0 +1,22 @@
+<header class="header">
+  <div class="container d-flex align-items-center">
+    <div class="header-logo">
+      <a [routerLink]="['/auth/dashboard']" class="logo">
+        <a href="#"><img src="../assets/img/logo-login.png" alt=""></a>
+      </a>
+    </div>
+
+    <nav class="main-header-nav">
+      <a [routerLink]="['/auth', 'addProfile']">Add Profile</a>
+    </nav>
+    <!-- /.main-header-nav -->
+    <nav class="info-header-nav">
+      <input type="text" placeholder="search name" [(ngModel)]="searchStr">
+      <a href="#" (click)="logout($event)">Logout</a>
+
+    </nav>
+    <!-- /.info-header-nav -->
+  </div>
+</header>
+<!--<router-outlet></router-outlet>-->
+<app-dashboard-card-page [searchStr]="searchStr"></app-dashboard-card-page>

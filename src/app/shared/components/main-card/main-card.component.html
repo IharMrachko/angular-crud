@@ -1,0 +1,83 @@
+<div *ngIf="empty; else loading">
+  <main *ngFor="let user of userProfile | searchPipe: searchStr"
+        class="main"
+
+  >
+    <div class="photo-wrapper">
+      <div class="photo-title">
+        <div class="photo-person">
+          <img class="photo" src="{{user.url}}" alt="">
+        </div>
+        <div class="photo-info">
+          <p>Birthday: {{user.birthday}}</p>
+          <p>Old: {{user.age}}</p>
+
+        </div>
+      </div>
+    </div>
+    <!--  photo-wrapper       -->
+    <div class="wrapper-main-btn">
+      <div class="main-container">
+        <div class="information-person">
+          <p>{{user.name}}</p>
+          <p>{{user.work}}</p>
+        </div>
+
+        <div class="information-detail">
+          <div class="wrapper-detail">
+            <div class="information-detail-icon">
+              <a href="#">
+                <img src="../assets/img/logo-adress.png" alt="">
+              </a>
+            </div>
+            <p>{{user.address}}</p>
+
+          </div>
+          <!--   wrapper-detail         -->
+          <div class="wrapper-detail">
+            <div class="information-detail-icon">
+              <a href="#">
+                <img src="../assets/img/logo-phone.png" alt="">
+              </a>
+            </div>
+            <p>{{user.phone}}</p>
+
+          </div>
+          <!--   wrapper-detail         -->
+
+          <div class="wrapper-detail">
+            <div class="information-detail-icon">
+              <a href="#">
+                <img src="../assets/img/email-icon.png" alt="">
+              </a>
+            </div>
+
+            <p>{{user.email}}</p>
+
+          </div>
+          <!--   wrapper-detail         -->
+          <div class="wrapper-detail">
+            <div class="information-detail-icon">
+              <a href="{{user.website}}">
+                <img src="../assets/img/logo-website.png" alt="">
+              </a>
+            </div>
+            <div class="information-detail-text">
+              <p>{{user.website}}</p>
+            </div>
+          </div>
+          <!--   wrapper-detail         -->
+        </div>
+
+      </div>
+      <!--  main-container       -->
+
+    </div>
+    <!--wrapper-main-btn -->
+  </main>
+</div>
+
+
+<ng-template class="empty" #loading>
+  <div class="empty"> no data yet, please sign in and add profile!</div>
+</ng-template>
